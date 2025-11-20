@@ -48,18 +48,37 @@
         z-index: 0;
       }
     </style>
-  <script type="importmap">
+
+    <!-- 
+      GitHub Pages Compatibility:
+      Since GitHub Pages is static, we polyfill process.env so the app doesn't crash on load.
+      The API key must be provided here or via a build-time replacement.
+    -->
+    <script>
+      window.process = {
+        env: {
+          API_KEY: '' // TODO: Enter your Gemini API Key here for testing on GitHub Pages
+        }
+      };
+    </script>
+
+    <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "react": "https://esm.sh/react@19.0.0",
+    "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <!-- Entry point for the application -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
