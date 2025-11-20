@@ -107,7 +107,7 @@ export const sendChatMessage = async (
     // but for a real chatbot, we'd use ai.chats.create() and keep the reference.
 
     const chat = ai.chats.create({
-      model: "gemini-3-pro-preview",
+      model: "gemini-2.5-flash",
       config: {
         systemInstruction:
           "You are a knowledgeable and friendly AI assistant specializing in Seoul, South Korea tourism and dining. Be helpful, polite, and enthusiastic.",
