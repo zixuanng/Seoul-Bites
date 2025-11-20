@@ -1,0 +1,7 @@
+{
+  "name": "Seoul Bites",
+  "description": "Discover the best, nearest, and cheapest eats in Seoul with AI-powered search and mapping.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
